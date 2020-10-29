@@ -27,7 +27,7 @@ setInterval(() => {
     ".ytp-play-progress.ytp-swatch-background-color"
   );
   const compStyles = window.getComputedStyle(vidProgessBar);
-  if (compStyles.backgroundColor === "rgb(255, 204, 0)") {
+  if (compStyles.background === "rgb(255, 204, 0)") {
     muteAdButton(true);
     i++;
   } else {
@@ -42,6 +42,12 @@ setInterval(() => {
       skipButton.click();
     }
     i = 0;
+  }
+
+  for (const closeAdButtonNew of document.getElementsByClassName(
+    "ytp-ad-preview-container"
+  )) {
+    closeAdButtonNew.click();
   }
 
   for (const closeAdButton of document.getElementsByClassName(
